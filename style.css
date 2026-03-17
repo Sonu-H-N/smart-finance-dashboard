@@ -86,3 +86,23 @@ border-radius:5px;
 display:flex;
 justify-content:space-between;
 }
+.plus{
+border-left: 5px solid #22c55e;
+}
+
+.minus{
+border-left: 5px solid #ef4444;
+}
+
+li button{
+background:red;
+border:none;
+color:white;
+padding:5px 8px;
+border-radius:5px;
+cursor:pointer;
+}
+
+li{
+align-items:center;
+}
