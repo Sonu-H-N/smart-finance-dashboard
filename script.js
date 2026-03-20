@@ -4,6 +4,14 @@ transactions = transactions.filter(t => t.id !== id);
 updateLocalStorage();
 showTransactions();
 }
+const category = document.getElementById("category").value;
+
+const transaction = {
+id: Date.now(),
+text: text,
+amount: amount,
+category: category
+};
 
 function showTransactions(){
 
@@ -112,8 +120,8 @@ const li = document.createElement("li");
 
 li.classList.add(t.amount > 0 ? "plus" : "minus");
 
-li.innerHTML = `
-${t.text}
+lli.innerHTML = `
+${t.text} (${t.category})
 <span>₹${t.amount}</span>
 <button onclick="deleteTransaction(${t.id})">❌</button>
 `;
@@ -154,3 +162,32 @@ backgroundColor: ["#22c55e", "#ef4444"]
 }
 });
 }
+function analyzeSpending(){
+
+let categories = {};
+
+transactions.forEach(t => {
+if(t.amount < 0){
+categories[t.category] = (categories[t.category] || 0) + Math.abs(t.amount);
+}
+});
+
+let message = "Good job 👍";
+
+let maxCategory = "";
+let maxAmount = 0;
+
+for(let cat in categories){
+if(categories[cat] > maxAmount){
+maxAmount = categories[cat];
+maxCategory = cat;
+}
+}
+
+if(maxCategory){
+message = "⚠️ You spend most on " + maxCategory;
+}
+
+document.getElementById("analysis").innerText = message;
+}
+analyzeSpending();
