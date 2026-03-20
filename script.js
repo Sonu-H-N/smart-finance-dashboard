@@ -191,3 +191,32 @@ message = "⚠️ You spend most on " + maxCategory;
 document.getElementById("analysis").innerText = message;
 }
 analyzeSpending();
+async function getAIAdvice(){
+
+const analysisText = transactions.map(t => 
+`${t.category}: ₹${t.amount}`
+).join(", ");
+
+const response = await fetch("https://api.openai.com/v1/chat/completions", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+"Authorization": "Bearer YOUR_API_KEY"
+},
+body: JSON.stringify({
+model: "gpt-4o-mini",
+messages: [
+{
+role: "user",
+content: `Analyze my expenses: ${analysisText} and give financial advice`
+}
+]
+})
+});
+
+const data = await response.json();
+
+document.getElementById("analysis").innerText =
+data.choices[0].message.content;
+
+}
