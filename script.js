@@ -220,3 +220,24 @@ document.getElementById("analysis").innerText =
 data.choices[0].message.content;
 
 }
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+
+document.body.classList.toggle("light");
+
+if(document.body.classList.contains("light")){
+toggleBtn.innerText = "☀️";
+localStorage.setItem("theme", "light");
+}else{
+toggleBtn.innerText = "🌙";
+localStorage.setItem("theme", "dark");
+}
+
+});
+
+// Load saved theme
+if(localStorage.getItem("theme") === "light"){
+document.body.classList.add("light");
+toggleBtn.innerText = "☀️";
+}

@@ -1,3 +1,19 @@
+:root {
+--bg: #0f172a;
+--text: white;
+--card: #1e293b;
+}
+
+.light {
+--bg: #f1f5f9;
+--text: #0f172a;
+--card: #ffffff;
+}
+
+body{
+background: var(--bg);
+color: var(--text);
+}
 body{
 font-family: Arial, sans-serif;
 background:#0f172a;
@@ -17,12 +33,11 @@ max-width:600px;
 margin:auto;
 }
 
-.balance-card{
-background:#334155;
-padding:20px;
-border-radius:10px;
-text-align:center;
-margin-top:20px;
+.balance-card,
+.chart-container,
+li,
+header{
+background: var(--card);
 }
 
 .summary{
