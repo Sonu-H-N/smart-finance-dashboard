@@ -18,10 +18,6 @@ A modern and interactive finance tracking web app to manage income, expenses, an
 * JavaScript
 * Chart.js
 
-## 📸 Screenshots
-
-(Add screenshots here)
-
 ## ⚙️ How to Run
 
 1. Clone the repository
@@ -37,7 +33,5 @@ A modern and interactive finance tracking web app to manage income, expenses, an
 ## 🤝 Contribution
 
 Feel free to fork and improve this project.
-
----
 
 ⭐ If you like this project, give it a star!
