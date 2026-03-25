@@ -35,3 +35,7 @@ A modern and interactive finance tracking web app to manage income, expenses, an
 Feel free to fork and improve this project.
 
 ⭐ If you like this project, give it a star!
+
+##  Author
+
+Sonu H N
