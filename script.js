@@ -241,3 +241,48 @@ if(localStorage.getItem("theme") === "light"){
 document.body.classList.add("light");
 toggleBtn.innerText = "☀️";
 }
+async function downloadPDF(){
+
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+let y = 10;
+
+doc.setFontSize(16);
+doc.text("Smart Finance Report", 20, y);
+
+y += 10;
+
+let income = 0;
+let expense = 0;
+
+transactions.forEach(t => {
+if(t.amount > 0){
+income += t.amount;
+}else{
+expense += t.amount;
+}
+});
+
+const balance = income + expense;
+
+doc.setFontSize(12);
+doc.text(`Total Balance: ₹${balance}`, 20, y);
+y += 10;
+
+doc.text(`Total Income: ₹${income}`, 20, y);
+y += 10;
+
+doc.text(`Total Expense: ₹${Math.abs(expense)}`, 20, y);
+y += 15;
+
+doc.text("Transactions:", 20, y);
+y += 10;
+
+transactions.forEach(t => {
+doc.text(`${t.text} (${t.category}) : ₹${t.amount}`, 20, y);
+y += 8;
+});
+
+doc.save("Finance_Report.pdf");
+}
