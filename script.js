@@ -286,3 +286,10 @@ y += 8;
 
 doc.save("Finance_Report.pdf");
 }
+if(localStorage.getItem("loggedIn") !== "true"){
+window.location.href = "login.html";
+}
+function logout(){
+localStorage.removeItem("loggedIn");
+window.location.href = "login.html";
+}
