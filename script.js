@@ -196,3 +196,42 @@ y+=8;
 
 doc.save("Finance_Report.pdf");
 }
+import Dashboard from "./pages/Dashboard";
+
+function App() {
+  return (
+    <div>
+      <Dashboard />
+    </div>
+  );
+}
+
+export default App;
+import { useState } from "react";
+
+function Dashboard() {
+
+const [transactions, setTransactions] = useState([]);
+
+const addTransaction = () => {
+  alert("Transaction Added");
+};
+
+return (
+<div>
+
+<h1>💰 Smart Finance Dashboard</h1>
+
+<input type="text" placeholder="Description" />
+<input type="number" placeholder="Amount" />
+
+<button onClick={addTransaction}>
+Add Transaction
+</button>
+
+</div>
+);
+
+}
+
+export default Dashboard;
