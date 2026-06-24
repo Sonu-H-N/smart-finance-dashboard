@@ -1,0 +1,20 @@
+{
+  "name": "Smart Finance Dashboard",
+  "short_name": "SmartFinance",
+  "description": "Track income, expenses, and balance with charts, PDF reports, and smart spending insights.",
+  "start_url": "./login.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'%3E%3Crect width='192' height='192' rx='40' fill='%230f172a'/%3E%3Ctext x='96' y='128' font-size='100' text-anchor='middle' fill='%233b82f6'%3E%E2%82%B9%3C/text%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
